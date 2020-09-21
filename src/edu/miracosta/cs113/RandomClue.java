@@ -55,6 +55,10 @@ public class RandomClue {
         AssistantJack jack;
         Scanner keyboard = new Scanner(System.in);
         Random random = new Random();
+        
+        weapon = 1;
+        location = 1;
+        murder = 1;
 
         // INPUT
         System.out.print("Which theory would like you like to test? (1, 2, 3[random]): ");
@@ -65,10 +69,21 @@ public class RandomClue {
         jack = new AssistantJack(answerSet);
 
         do {
-            weapon = random.nextInt(6) + 1;
-            location = random.nextInt(10) + 1;
-            murder = random.nextInt(6) + 1;
+        	
+            //weapon = random.nextInt(6) + 1;
+            //location = random.nextInt(10) + 1;
+            //murder = random.nextInt(6) + 1;
+            
+                    	
             solution = jack.checkAnswer(weapon, location, murder);
+            if(solution == 1) {
+            	weapon++;
+            } else if (solution == 2) {
+            	location++;
+            } else
+            	murder++;
+            	
+           
         } while (solution != 0);
 
         answer = new Theory(weapon, location, murder);
