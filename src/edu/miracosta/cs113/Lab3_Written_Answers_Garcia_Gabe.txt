@@ -1,0 +1,13 @@
+Task: Lab3
+Programmer: Gabe Garcia
+Date: 9/20/2020
+
+The original RandomClue driver did not return the correct solution on 20 or less guesses
+for any of the options (1, 2, 3).
+
+Options 1, and 2 seemed to require less guesses than option 3.
+
+The bad element in the original strategy is that it uses random guesses for 3 variables.
+All 3 variables must match the solution which is the most difficult to do.
+
+The good part of this strategy is that it does work; it eventually finds a solution.
